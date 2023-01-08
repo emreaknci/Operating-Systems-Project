@@ -1,10 +1,11 @@
 public class Process implements Runnable {
 
 
-    private int id;
-    private int arrivalTime; 
-    private int priority;
-    private int processTime;
+	//Döküanda istenen proses özellikleri
+    private int id;//Proses idsi
+    private int arrivalTime;//Varıs zamanı
+    private int priority;//Oncelik
+    private int processTime;//Proses zamanı
     private String color; //Satir rengi icin
 
 
@@ -26,7 +27,7 @@ public class Process implements Runnable {
     public void setTimeOut(boolean timeOut) {
         isTimeOut = timeOut;
     }
-    public Process(int id,int arrivalTime, int priority, int processTime,String color) {
+    public Process(int id,int arrivalTime, int priority, int processTime,String color) {//Proses consturctoru
         this.arrivalTime = arrivalTime;
         this.id =id;
         this.priority = priority;
@@ -35,6 +36,7 @@ public class Process implements Runnable {
         this.isTimeOut=false;
         this.color=color;
     }
+    //Asagida yukarıdaki özelliklerin getter ve setter methodları mevcuttur
     public String getColor() {
         return color;
     }
@@ -67,7 +69,7 @@ public class Process implements Runnable {
     }
 
     @Override
-    public void run() {
+    public void run() {//Runnable arayüzünü implemente ettiğimiz method
         System.out.println("Varış zamanı: " + arrivalTime + " Öncelik değeri: " + priority + " Proses zamanı: " + processTime);
     }
 
